@@ -72,7 +72,7 @@ label {
 }
 
 #events-container {
-  padding: 20px;
+  padding: 20px 0;
   border: 1px solid #eee;
   border-radius: 0px;
   height: 75vh;
