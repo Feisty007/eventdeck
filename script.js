@@ -4,7 +4,7 @@ $(document).ready(function() {
   var currentMonth = new Date().getMonth() + 1;
   // Get the JWT from the API and store it in a variable
   $.ajax({
-    url: 'http://api.arenaracingcompany.co.uk/auth',
+    url: 'https://api.arenaracingcompany.co.uk/auth',
     type: 'POST',
     beforeSend: function(xhr) {
       xhr.setRequestHeader('Authorization', 'Bearer 264c77f740cc1f02cac8f0a7e30ccdcd2f20dcf5');
