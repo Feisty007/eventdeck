@@ -115,6 +115,14 @@ label {
 
 
 
+@media (max-width:900px) {
+  h1 {
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 40px;
+  }
+}
+
 @media (max-width:500px) {
   .resultBox {
     padding: 20px 10px;
