@@ -27,7 +27,6 @@ $(document).ready(function() {
         setTimeout(function() {
           loadEvents(jwt, month);
         }, 2000);
-
       });
     },
     error: function(jqXHR, textStatus, errorThrown) {
@@ -38,42 +37,46 @@ $(document).ready(function() {
 
 function loadEvents(jwt, month) {
 
-    // Get the events for the specified month from the API
-    $.ajax({
-      url: 'https://api.arenaracingcompany.co.uk/event/month/1318/' + month,
-      type: 'GET',
-      beforeSend: function(xhr) {
-        xhr.setRequestHeader('Authorization', 'Bearer ' + jwt);
-      },
-      success: function(response) {
-        if(response.length > 0){
-          $.each(response, function(index, event) {
-            var id = event.id;
-            var date = new Date(event.date).toLocaleDateString();
-            var slug = event.slug;
-            var title = event.title;
-            var description = event.description;
-            var images = event.images;
-            var card = '<div class="col-lg-4 col-md-6 mb-5"><div class="card event-card p-2">';
-            if (images) {
-              card += '<div class="card-img"><img src="' + images.desktop + '" class="card-img-top" alt="' + slug + '"></div>';
-            }
-            card += '<div class="card-header"><h6>' + title + '</h6></div>'
-            card += '<div class="card-body"><p>' + description + '</p></div>'
-            card += '<div class="card-footer"><small class="text-muted">ID: ' + id + ' | Date: ' + date + '</small></div></div></div>';
-            $('#events-container').append(card);
-          });
-        }
-        // Loop through each event and append it to the container
+  // Get the events for the specified month from the API
+  $.ajax({
+    url: 'https://api.arenaracingcompany.co.uk/event/month/1318/' + month,
+    type: 'GET',
+    beforeSend: function(xhr) {
+      xhr.setRequestHeader('Authorization', 'Bearer ' + jwt);
+    },
+    success: function(response) {
+      console.log(response.length)
+      if (response.length > 0) {
+        $.each(response, function(index, event) {
+          var id = event.id;
+          var date = new Date(event.date).toLocaleDateString();
+          var slug = event.slug;
+          var title = event.title;
+          var description = event.description;
+          var images = event.images;
+          var card = '<div class="col-lg-4 col-md-6 mb-5"><div class="card event-card p-2">';
+          if (images) {
+            card += '<div class="card-img"><img src="' + images.desktop + '" class="card-img-top" alt="' + slug + '"></div>';
+          }
+          card += '<div class="card-header"><h6>' + title + '</h6></div>'
+          card += '<div class="card-body"><p>' + description + '</p></div>'
+          card += '<div class="card-footer"><small class="text-muted">ID: ' + id + ' | Date: ' + date + '</small></div></div></div>';
+          $('#events-container').append(card);
+        });
 
-      },
-      error: function(jqXHR, textStatus, errorThrown) {
-        console.log(textStatus, errorThrown);
+      }else{
+          $('#events-container').html('Sorry! No events this month.');
       }
-    });
+      // Loop through each event and append it to the container
+
+    },
+    error: function(jqXHR, textStatus, errorThrown) {
+      console.log(textStatus, errorThrown);
+    }
+  });
 
 
   // Clear any existing events from the container
   $('#events-container').empty();
-$('#loader').hide('slow');
+  $('#loader').hide('slow');
 }
