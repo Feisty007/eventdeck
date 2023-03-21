@@ -13,7 +13,6 @@ body {
   overflow: hidden;
 }
 
-
 .lds-roller{
       display: inline-block;
       position: absolute;
@@ -202,8 +201,6 @@ label {
   font-size: 13px;
   margin: 0;
 }
-
-
 
 @media (max-width:900px) {
   h1 {
