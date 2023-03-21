@@ -117,7 +117,7 @@ label {
 
 @media (max-width:900px) {
   h1 {
-    text-align: left;
+    text-align: center;
     font-family: 'Montserrat', sans-serif;
     font-size: 40px;
   }
