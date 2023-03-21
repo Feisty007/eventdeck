@@ -44,6 +44,8 @@ function loadEvents(jwt, month) {
     beforeSend: function(xhr) {
       xhr.setRequestHeader('Authorization', 'Bearer ' + jwt);
     },
+
+    // Loop through each event and append it to the container
     success: function(response) {
       console.log(response.length)
       if (response.length > 0) {
@@ -63,12 +65,11 @@ function loadEvents(jwt, month) {
           card += '<div class="card-footer"><small class="text-muted">ID: ' + id + ' | Date: ' + date + '</small></div></div></div>';
           $('#events-container').append(card);
         });
-
-      }else{
-          $('#events-container').html('<div class="error-msg"><p>Sorry! No events this month.</p></div>');
       }
-      // Loop through each event and append it to the container
-
+      // No Event Message
+      else{
+          $('#events-container').html('<div class="col-md-10 error-msg"><h5>Sorry!</h5><p>No events this month</p></div>');
+      }
     },
     error: function(jqXHR, textStatus, errorThrown) {
       console.log(textStatus, errorThrown);
