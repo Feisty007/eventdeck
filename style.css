@@ -205,9 +205,16 @@ label {
 .error-msg {
   width: 100%;
   text-align: center;
-  font-size: 24px;
-  position: absolute;
   top: 45%;
+}
+
+.error-msg h5{
+  text-transform: uppercase;
+  letter-spacing: 4px;
+}
+
+.error-msg p {
+  font-size: 14px;
 }
 
 @media (max-width:900px) {
