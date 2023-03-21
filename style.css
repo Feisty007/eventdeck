@@ -13,6 +13,7 @@ body {
   overflow: hidden;
 }
 
+
 .lds-roller{
       display: inline-block;
       position: absolute;
@@ -161,7 +162,7 @@ label {
 }
 
 #events-container {
-  padding: 20px;
+  padding: 20px 0;
   border: 1px solid #eee;
   border-radius: 0px;
   height: 75vh;
@@ -202,16 +203,21 @@ label {
   margin: 0;
 }
 
+
+
 @media (max-width:900px) {
   h1 {
-    text-align: left;
+    text-align: center;
     font-family: 'Montserrat', sans-serif;
     font-size: 40px;
   }
   .filters {
     margin-bottom: 30px;
 }
-  
+.row {
+    margin-right: auto !important;
+    margin-left: auto !important;
+}
 }
 
 @media (max-width:500px) {
