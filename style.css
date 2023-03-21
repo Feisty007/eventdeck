@@ -121,6 +121,9 @@ label {
     font-family: 'Montserrat', sans-serif;
     font-size: 40px;
   }
+  .filters {
+    margin-bottom: 30px;
+}
 }
 
 @media (max-width:500px) {
@@ -141,4 +144,5 @@ label {
     font-size: 12px;
     margin: 0;
   }
+
 }
