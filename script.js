@@ -26,7 +26,7 @@ $(document).ready(function() {
         var month = $(this).val();
         setTimeout(function() {
           loadEvents(jwt, month);
-        }, 6000);
+        }, 2000);
 
       });
     },
