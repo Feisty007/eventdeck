@@ -51,7 +51,7 @@ label {
   padding: 12px 10px;
   width: 60%;
   border: none;
-  border-radius: none;
+  border-radius: 0px !important;
   outline: none;
   line-height: 1.4;
   background-position: right 8px center;
