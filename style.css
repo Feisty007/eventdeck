@@ -13,7 +13,6 @@ body {
   overflow: hidden;
 }
 
-
 .lds-roller{
       display: inline-block;
       position: absolute;
@@ -209,7 +208,8 @@ label {
   h1 {
     text-align: left;
     font-family: 'Montserrat', sans-serif;
-    font-size: 40px;
+    font-size: 32px;
+    margin: auto 0;
   }
   .filters {
     margin-bottom: 30px;
