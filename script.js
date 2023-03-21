@@ -4,6 +4,11 @@ $(document).ready(function() {
 
   // Initialize the month to the current month
   var currentMonth = new Date().getMonth() + 1;
+
+  // const currentMonth = new Date().getMonth() + 1;
+  document.getElementById("month-select").value = currentMonth;
+
+
   // Get the JWT from the API and store it in a variable
   $.ajax({
     url: 'https://api.arenaracingcompany.co.uk/auth',
@@ -21,7 +26,7 @@ $(document).ready(function() {
         var month = $(this).val();
         setTimeout(function() {
           loadEvents(jwt, month);
-        }, 2000);
+        }, 6000);
 
       });
     },
