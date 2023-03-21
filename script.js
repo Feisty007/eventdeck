@@ -65,7 +65,7 @@ function loadEvents(jwt, month) {
         });
 
       }else{
-          $('#events-container').html('Sorry! No events this month.');
+          $('#events-container').html('<div class="error-msg"><p>Sorry! No events this month.</p></div>');
       }
       // Loop through each event and append it to the container
 
