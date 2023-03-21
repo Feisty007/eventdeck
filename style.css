@@ -204,13 +204,14 @@ label {
 
 @media (max-width:900px) {
   h1 {
-    text-align: center;
+    text-align: left;
     font-family: 'Montserrat', sans-serif;
     font-size: 40px;
   }
   .filters {
     margin-bottom: 30px;
 }
+  
 }
 
 @media (max-width:500px) {
